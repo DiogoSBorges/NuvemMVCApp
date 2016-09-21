@@ -1,0 +1,65 @@
+@model IEnumerable<NuvemMVCApp.Models.Person>
+
+@{
+    ViewData["Title"] = "List Person";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<br/>
+<br />
+<br />
+  <form asp-controller="Person" asp-action="Index" class="form-inline">
+      <div class="row">
+          <div class="col-lg-6">
+              <div class="input-group">
+                  <input type="text" class="form-control" name="SearchString" placeholder="Search name for...">
+                  <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit" title="Filter">
+                          <span class="glyphicon glyphicon-search" />
+                      </button>
+                  </span>
+              </div>
+          </div>
+       </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.birthDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.birthDate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
