@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
 </p>
 <br/>
 <br />
@@ -55,9 +55,15 @@
                 @Html.DisplayFor(modelItem => item.birthDate)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ID" title="Edit">
+                    <span class="glyphicon glyphicon-cog" />
+                </a> |
+                <a asp-action="Details" asp-route-id="@item.ID" title="Details">
+                    <span class="glyphicon glyphicon-info-sign" />
+                </a> |
+                <a asp-action="Delete" asp-route-id="@item.ID" title="Delete">
+                    <span class="glyphicon glyphicon-trash"/>
+                </a>
             </td>
         </tr>
 }

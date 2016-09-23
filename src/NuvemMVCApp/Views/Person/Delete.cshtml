@@ -29,12 +29,18 @@
         <dd>
             @Html.DisplayFor(model => model.birthDate)
         </dd>
+        <dd>
+            <br/>
+            <form asp-action="Delete">
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                </div>
+            </form>
+        </dd>
     </dl>
     
-    <form asp-action="Delete">
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            <a asp-action="Index">Back to List</a>
-        </div>
-    </form>
+   
+    <a asp-action="Index" title="Back to List">
+        <span class="glyphicon glyphicon-arrow-left" />
+    </a>
 </div>

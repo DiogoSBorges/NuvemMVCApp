@@ -31,6 +31,10 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.ID" title="Edit">
+        <span class="glyphicon glyphicon-cog" />
+     </a> |
+    <a asp-action="Index" title="Back to List">
+        <span class="glyphicon glyphicon-arrow-left" />
+    </a>
 </div>
